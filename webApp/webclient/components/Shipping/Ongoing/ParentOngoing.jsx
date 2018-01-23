@@ -1,0 +1,98 @@
+import React from 'react';
+import {Grid,Row,Col} from 'react-bootstrap';
+import OngoingComponent from './OngoingComponent.jsx';
+import Axios from 'axios';
+// const data = [
+//     {
+//         deliveryId: 'D1001',
+//         appointingCo: 'Mercuria',
+//         volume: '75k',
+//         deviation: 'NO',
+//         loadPort:'Amsterdam',
+//         dischargePort: 'Grangemouth',
+//         date: '28 Feb - 5 Mar 2018',
+//         vessel: 'The Princess',  
+//     },
+//     {
+//         deliveryId: 'D1001',
+//         appointingCo: 'Mercuria',
+//         volume: '75k',
+//         deviation: 'NO',
+//         loadPort:'Amsterdam',
+//         dischargePort: 'Grangemouth',
+//         date: '28 Feb - 5 Mar 2018',
+//         vessel: 'The Princess',  
+//     },
+//     {
+//         deliveryId: 'D1001',
+//         appointingCo: 'Mercuria',
+//         volume: '75k',
+//         deviation: 'NO',
+//         loadPort:'Amsterdam',
+//         dischargePort: 'Grangemouth',
+//         date: '28 Feb - 5 Mar 2018',
+//         vessel: 'The Princess',  
+//     }    
+//   ];
+
+
+
+export default class ParentOngoing extends React.Component{
+    state = {
+        pareclCount: 0,
+        parcelData:[]
+       
+       
+    }
+    componentDidMount=()=>{
+
+        let retrievedUserDetails= JSON.parse(sessionStorage.getItem('userLoginDetails'));
+    console.log('----------------User Login Details'+retrievedUserDetails);
+        Axios({
+          method:'get',
+          url:'/channels/mychannel/chaincodes/ParcelCC?peer=peer1&fcn=getParcelByShippingCompany&args=["'+retrievedUserDetails.username+'"]',
+          headers: {  
+              'Authorization': 'Bearer '+ retrievedUserDetails.message.token,
+              'Content-Type': 'application/json'
+          }
+          })
+          .then((data) => {
+          console.log('----------------all trade data connected to server for get is');
+          console.log(data);
+    
+          let confirmParcelCount =0;
+          let mainParcelData=[];
+         data.data.forEach((data)=>{
+            if(data.status=="ConfirmedParcel"){             
+                
+                confirmParcelCount++;
+                mainParcelData.push(data);
+       
+             
+            }
+        })
+        this.setState({pareclCount:confirmParcelCount,parcelData:mainParcelData});
+        
+    
+                 
+          })
+          .catch((error) => {
+          console.log(error);
+          console.log(error+"error in get Trade");
+          });
+    
+    }
+
+    render(){
+        return(
+        <div style={{marginTop:"65px"}}>
+            <Row className="trContainer show-grid" style={{marginLeft:"0", marginRight:"0"}}>
+            <Col md={12} style={{paddingLeft:"0", paddingRight:"0"}}>
+            <OngoingComponent headingText="Ongoing Shipping" number={this.state.pareclCount}
+                 data={this.state.parcelData}/>
+            </Col>
+            </Row>
+          </div>
+        )
+    }
+}

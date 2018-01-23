@@ -1,0 +1,516 @@
+
+
+.background{
+  
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  width:100vw;
+  height:100vh;
+
+}
+
+.newTrade_textarea {
+ width: 100%;
+ height: 227px;
+ border-radius: 8px;
+ background-color: #ffffff ;
+ border: solid 1px #d5d5d5 ;
+ resize: none;
+ margin-top: 36px;
+}
+.line {
+ width: 100%;
+ height: 3px;
+ border: solid 1px #d5d5d5 ;
+}
+.terms_conditions {
+padding: 30px 0px;
+}
+.BarChartCSS .bar {
+  fill: steelBlue;
+}
+
+.BarChartCSS .bar:hover {
+  fill: brown;
+}
+
+.BarChartCSS .axis {
+  font: 10px sans-serif;
+}
+
+.BarChartCSS .axis path,
+.BarChartCSS .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.BarChartCSS .x.axis path {
+  display: none;
+}
+
+/* TRADE RECAP */
+.trContainer{
+  margin-top:60px;
+  background-color: #f9f9f9;
+}
+
+.trLeftCol{
+  max-width: 325px;
+  padding:0 45px;
+  background: #fff;
+}
+
+.trLeftCol > h1{
+  font-family: Helvetica;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  padding-bottom: 40px;
+}
+
+ul.trSwitch{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: solid 1px #979797;
+  margin-bottom: 40px;
+}
+ul.trSwitch li{
+  display: inline-block;
+}
+
+ul.trSwitch li button{
+  padding:11px;
+  text-align: center;
+  background-color: #fff;
+  border:none;
+  outline:none;
+  width: 77px;
+  height: 40px;
+  box-sizing: border-box;
+  border-right: solid 1px #979797;
+}
+
+ul.trSwitch li:last-child button{
+  border-right: none;
+}
+
+ul.trSwitch li button.selected, ul.trSwitch li button:hover{
+  background-color: #1f497d;
+  color:#fff;
+  border:none;
+}
+
+.trFilterType{
+  padding-bottom:40px;
+}
+
+.trFilterLabel{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #333333;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  display: block
+}
+
+.trFilterType.nobb{
+  border-bottom: 0;
+  padding-top: 0;
+}
+
+.trSecNav{
+  height: 85px;
+  background-color: #ffffff;
+  display:flex;
+  justify-content: flex-start;
+  align-items:center;
+  padding:25px;
+  padding-left:30px;
+  width:100%;
+}
+
+.trLink{
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  text-align: left;
+  color: #545454;
+  margin-right:50px;
+  cursor: pointer
+}
+
+.trLink.selected{
+  text-decoration: none;
+  border-bottom: 2px solid #1f497d;
+}
+
+.trTableContainer h2{
+  margin-top:32px;
+  margin-left:30px;
+  margin-bottom:23px;
+  font-size: 24px;
+  color: #333333;
+}
+
+.trTableContainer h2 span {
+  display: inline-block;
+  margin-left:10px;
+  font-weight: bold;
+  color:#ccc;
+}
+
+.trTable {
+  width:calc(97% - 30px);
+  background-color: #fff;
+  margin-left:30px;
+}
+
+.trTable th {
+  text-transform: uppercase;
+  width:10%;
+  padding:15px;
+  vertical-align: top;
+
+}
+.trTable td {
+  padding:21px;
+  display: table-cell;
+}
+
+.trTable tr{
+  border-bottom:1px solid #d5d5d5;
+}
+.trTable tr:last-child{
+  border:none;
+}
+
+
+.statuscards{
+  display: flex;
+  justify-content: center;
+  margin:30px 0
+}
+
+.statuscards .statuscard {
+  width:170px;
+  height: 260px;
+  margin:0 25px;
+  border: solid 1px #d5d5d5;
+  border-radius:6px;
+}
+.statuscard:hover {
+  border-color:#1f497d;
+  cursor: pointer
+}
+
+
+.statuscard h3{
+  padding:5px;
+  margin:0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.statuscard h3 span{
+  display: block;
+  font-size:12px;
+  font-weight: normal;
+  padding-left:2px;
+}
+.statuscard .thumb{
+  height:106px;
+  width:100%;
+  background-color: #1f497d;
+}
+
+.statuscard .icon{
+  margin:0 auto;
+  width:40px;
+  height:70px;
+  text-align:center;
+  font-size:4em;
+  color: #acacac;
+}
+
+.statuscard .date {
+  font-size:11px;
+  text-align: center;
+}
+
+.statuscard.completed .icon{
+  color: green;
+}
+
+.statuscard.completed .thumb{
+  background: url('../images/ship.png') no-repeat center center;
+  background-size: cover;
+}
+
+.statuscard.pending .icon{
+  color: #acacac;
+}
+
+.statuscard.pending .thumb{
+  background: #556080 url('../images/user.png') no-repeat center -7px;
+  background-size: contain;
+}
+
+
+.statuscard.notstarted{
+  opacity: 0.6;
+}
+
+.statuscard.notstarted .thumb{
+  background: #556080 url('../images/user.png') no-repeat center -7px;
+  background-size: contain;
+}
+
+
+/* PARCEL Creation */
+.parcelHeader{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.parcelHeader h1{
+  font-size: 36px;
+  letter-spacing: -0.4px;
+  padding:0px 122px 15px 56px;
+  display: inline-block
+}
+
+.parcelHeader h3{
+  display: inline-block;
+  font-size: 24px;
+  color:#d5d5d5;
+}
+
+.subheader h2{
+  margin-left:355px;
+  line-height: 78px;
+  font-size: 24px;
+}
+
+.parcelContent{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.parcelContent .filter{
+  width:326px;
+  box-sizing: border-box;
+  padding:0 50px;
+}
+
+.parcelContent .filter .trSwitch{
+  display: none;
+}
+
+.parcelContent .filter h1{
+  font-size: 20px;
+}
+
+.stepperContent{
+  background-color: #f9f9f9;
+  flex:2;
+  margin-right:55px
+}
+
+.tradeDetailsWrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.tradeDetailsWrapper .createParcel{
+  width:400px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:35px;
+  max-height:540px;
+}
+.createParcel .buyDetails{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:15px 0;
+}
+.createParcel .buyDetails span{
+  text-decoration: underline;
+}
+.createParcel hr{margin:0;}
+
+.createParcel .formControl{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.createParcel .formControl label{
+  padding-right:15px;
+  width:150px;
+}
+
+
+.createParcel .inlineFiledGroup{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start
+}
+
+.parcelForm{
+  margin-top:30px;
+  overflow: hidden
+}
+
+.parcelForm .inlinesubhead{
+  padding:15px 0;
+}
+
+.parcelForm .inlinesubhead h5{
+  font-weight: bold;
+}
+
+.stepContinue{
+  display: flex;
+  justify-content: flex-end;
+  padding-top:15px;
+}
+.stepContinue a{
+  text-align: right;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1f497d;
+}
+
+.stepContinue a:hover{
+  text-decoration: none;
+  cursor: pointer
+}
+
+.tradeDetailsWrapper .newRoute{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex: 2;
+}
+.vesselList{
+  display: flex;
+  flex-direction: column;
+
+}
+.vesselList .vessel{
+  border-bottom:2px solid #f9f9f9;
+  padding:15px;
+  background-color:#fff;
+  cursor: pointer;
+  max-width: 550px;
+  opacity:0.5;
+  transition:opacity 0.3s;
+}
+
+.vesselList .vessel:hover{
+  opacity: 1;
+}
+
+.vesselList .vessel.selected{
+  opacity: 1;
+}
+
+.parceldone{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding:100px 0;
+}
+.parceldone .f-4{
+  font-size: 80px;
+  color:green;
+}
+
+.parceldone p{
+  opacity: 0.4;
+  font-size: 48px;
+  text-align: left;
+  color: #1f497d;
+}
+
+
+/* conform parcel  */
+
+.parcel-status-card{
+  width: 100%;
+  min-height: 380px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 10px;
+  padding: 10px;
+  }
+  .statuscard-left > .profileImg{
+  background: #556080 url('../images/user.png') no-repeat center -7px;
+  background-size: contain;
+  width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    float: left;
+  }
+  .profileTxt{
+  float: left;
+  padding: 5px;
+  }
+  .statuscard-left .profileTxt span{
+  display: block;
+  }
+  .parcel-statusTabs a{
+  display: inline-block;
+  color: #1f497d ;
+  }
+  .parcel-status-card h5 span{
+  width:90px;
+  display: inline-block;
+  }
+
+  .tradeTable thead th:not(:last-child) {
+    border-right: 1px solid #ccc;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+/* update on 20 Jan */
+  .tradeactions div{
+    display: flex;
+    justify-content: flex-end;
+  }
+ 
+  .tradeactions div a{
+    display: block;
+    padding:0 25px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+ 
+  .background{
+    background:url('../images/oil_tanker.jpg') no-repeat fixed left center;
+    background-size: cover;
+  }
+ 
+  .background h2{
+    font-size: 22px;
+    padding-top:40px;
+  }
+ 
+  .background br{
+    display: none;
+  }
